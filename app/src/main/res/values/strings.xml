@@ -1,0 +1,25 @@
+<resources>
+    <string name="app_name">10 days Cooking Recipes</string>
+    <string name="topic1">Brownies</string>
+    <string name="topic2">Cake</string>
+    <string name="topic3">Choclate Cookies</string>
+    <string name="topic4">ChokoChip Cake</string>
+    <string name="topic5">Fruit Chaat</string>
+    <string name="topic6">Healthy Food</string>
+    <string name="topic7">Mexican Corn Salad</string>
+    <string name="topic8">Pakora</string>
+    <string name="topic9">Pasta</string>
+    <string name="topic10">Thai Green Curry</string>
+    <string name="about">About</string>
+    <string name="directions1"></string>
+    <string name="directions2">Directions</string>
+    <string name="directions3">Directions</string>
+    <string name="directions4">Directions</string>
+    <string name="directions5">Directions</string>
+    <string name="directions6">Directions</string>
+    <string name="directions7">Directions</string>
+    <string name="directions8">Directions</string>
+    <string name="directions9"></string>
+    <string name="directions10">Directions</string>
+
+</resources>
