@@ -38,6 +38,6 @@ fun CookingRecipeApp( modifier: Modifier = Modifier) {
 @Composable
 fun GreetingPreview() {
     CookingRecipesTheme {
-        CookingRecipeApp("Android")
+        CookingRecipeApp()
     }
 }
