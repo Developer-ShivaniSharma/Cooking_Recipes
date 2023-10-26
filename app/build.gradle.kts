@@ -5,7 +5,7 @@ plugins {
 
 android {
     namespace = "com.myapp.cookingrecipes"
-    compileSdk = 33
+    compileSdk = 34
 
     defaultConfig {
         applicationId = "com.myapp.cookingrecipes"
