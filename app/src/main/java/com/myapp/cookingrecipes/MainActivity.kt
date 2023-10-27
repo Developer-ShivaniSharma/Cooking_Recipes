@@ -12,6 +12,7 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material.icons.Icons
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.CenterAlignedTopAppBar
@@ -22,6 +23,10 @@ import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBar
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
@@ -95,6 +100,7 @@ fun CookingRecipesList(cookingRecipesList: List<CookingRecipes>, modifier: Modif
 
 @Composable
 fun CookingRecipesDetail(cookingRecipes: CookingRecipes, modifier: Modifier = Modifier) {
+    var expanded by remember{ mutableStateOf(false) }
     Card(
         elevation = CardDefaults.cardElevation(defaultElevation = 2.dp),
         modifier = modifier.clip(RoundedCornerShape(16.dp)
@@ -108,23 +114,28 @@ fun CookingRecipesDetail(cookingRecipes: CookingRecipes, modifier: Modifier = Mo
                 fontStyle = FontStyle.Italic
 
             )
+
             Image(
                 painter = painterResource(cookingRecipes.imageRes),
                 contentDescription = null,
                 alignment = Alignment.TopCenter,
-
+                modifier = Modifier.clickable {
+                    expanded = !expanded
+                }
             )
-            Text(
-                text = stringResource(cookingRecipes.directionsRes),
-                style = MaterialTheme.typography.titleLarge,
-                textDecoration = TextDecoration.Underline
-            )
-            Text(
-                text = stringResource(cookingRecipes.recipeRes),
-                style = MaterialTheme.typography.bodyLarge,
-
-
+            if (expanded) {
+                Text(
+                    text = stringResource(cookingRecipes.directionsRes),
+                    style = MaterialTheme.typography.titleLarge,
+                    textDecoration = TextDecoration.Underline
                 )
+                Text(
+                    text = stringResource(cookingRecipes.recipeRes),
+                    style = MaterialTheme.typography.bodyLarge,
+
+
+                    )
+            }
         }
     }
 
